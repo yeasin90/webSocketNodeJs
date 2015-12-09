@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>Test</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+	<script>
+		var socket;
+		function onload(){
+			socket = io.connect('http://localhost:3000'); // connect can take a parameter of server URL. If nothing defined, connect() will operate on the server where this page is located on
+			
+			// simple receiver of message from server to client
+			socket.on('timer', function(data){
+				document.getElementById('timer').innerHTML = new Date(data);
+			});
+			
+			socket.on("boradcast value", function(data){
+				document.getElementById('boradcast').innerHTML = data;
+			});
+			
+			socket.emit("broadcast by category", "webSocketClient");
+		};
+		
+		
+		function submitData(){
+			var data = document.getElementById("inputdata").value;
+			socket.emit('submit', {value: data, pageCategory: "page1"});	
+			//socket.emit('submit', {value: data, pageCategory: "page2"}); // send to only page 2
+			//socket.emit('submit', {value: data, pageCategory: "page3"}); // send to only page 3
+		};
+	</script>
+</head>
+
+<body onload="onload()">
+	<h1>Sample webcoket page</h1>
+	<p>Timer : <span id="timer"></span></p>
+	<p>Broadcasted Value : <span id="boradcast"></span></p>
+	<form action="#">
+		<p>Data:
+			<input type="text" id="inputdata" />
+			<input type="button" onclick="submitData()" value="Submit" />
+		</p>
+	</form>
+</body>
+
+</html>

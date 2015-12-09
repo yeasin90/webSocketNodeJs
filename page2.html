@@ -1,0 +1,29 @@
+<html>
+
+<head>
+	<title>Test</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.7/socket.io.min.js"></script>
+	<script>
+		var socket;
+		function onload(){
+			socket = io.connect('http://localhost:3000'); 
+			
+			socket.emit("broadcast by category", "page2");
+			
+			socket.on("boradcast note", function(data){
+				document.getElementById('boradcast').innerHTML = data;
+			});
+			
+			socket.on("clients", function(data){
+				alert(data +  ' has been connected');
+			});
+		};
+	</script>
+</head>
+
+<body onload="onload()">
+	<h4>Page 2</h4>
+	<p>Broadcasted Value : <span id="boradcast"></span></p>
+</body>
+
+</html>
