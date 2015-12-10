@@ -1,5 +1,5 @@
 # webSocketNodeJs
-Basic clients communication via **Socket.io** in **Node.js**, created for those who recently started learning **websocket** along with **Node.js**
+Basic multi-client communication via **Socket.io** in **Node.js**, created for those who recently started learning **websocket** along with **Node.js**
 
 
 This repository will cover most of the basics of websocket communication including :
