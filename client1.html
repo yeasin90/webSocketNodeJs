@@ -8,7 +8,7 @@
 		function onload(){
 			socket = io.connect('http://localhost:3000'); 
 			
-			socket.emit("broadcast by category", "page1");
+			socket.emit("broadcast by category", "client1");
 			
 			socket.on("boradcast note", function(data){
 				document.getElementById('boradcast').innerHTML = data;

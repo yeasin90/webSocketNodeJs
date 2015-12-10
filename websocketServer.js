@@ -20,8 +20,8 @@
 			});
 
 			socket.on('submit', function (data) {
-				//  broadcast means send this same message to all the clinets who are connected
-				//socket.broadcast.emit("boradcast value", data);
+				// broadcast means send this same message to all the clinets who are connected
+				// socket.broadcast.emit("boradcast value", data);
 				socket.broadcast.to(data.pageCategory).emit("boradcast note", data.value);
 			});
 		});
