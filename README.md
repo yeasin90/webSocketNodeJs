@@ -5,7 +5,7 @@ Basic multi-client communication via **Socket.io** in **Node.js**, created for t
 This repository will cover most of the basics of websocket communication including :
 
 1. Message broadcasting from a single client to every other clients
-2. Alert's a client when another client is connected to the server
+2. Alert's a client as soon as a new client gets connected to the server
 3. Message broadcasting from a single client to some specific client(s)
 
 here, client refers to a single HTML page.
