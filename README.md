@@ -10,4 +10,6 @@ This repository will cover most of the basics of websocket communication includi
 
 here, client refers to a single HTML page.
 
-Code is very simple and kind of self-explanatory. If you face any problem while using it, give me an email anytime :)
+Code is very simple and kind of self-explanatory. 
+
+In case you face any problem, knok me at : **abedinyeasin@gmail.com**
